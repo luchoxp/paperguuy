@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="js/engine.js"></script>
+    <title>jQuery + css3 - Simple Game</title>
+    
+    <script>
+        $(document).ready(function(){
+           runEngine();
+           $('.close').click(function(){
+                $('#light_box').css('display','none');
+           });
+           $("body").keydown(function(e){
+                k = e.keyCode;
+                
+                if (k == 27){$('#light_box').css('display','none');}
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="content">
+        <!--div id="controls_left">
+            <div class="moveUp_div"></div>
+            <div id="moveLeft_div"></div> 
+            <div class="moveDown_div"></div>
+        </div-->
+        
+        <div id="gamePanel">
+            <img id="eraser" src="images/eraser.png"/>
+            <img id="paperguy" src="images/paper-guy.gif"/>
+            <img id="ink" src="images/inkspot.png"/>
+        </div>
+        
+        <!--div id="controls_right">
+            <div class="moveUp_div"></div>
+            <div id="moveRight_div"></div> 
+            <div class="moveDown_div"></div>
+        </div-->
+        <!--div id="controls">
+            <div id="top">
+                <div id="moveUp_div"></div>
+            </div>
+            <div id="middle">
+                <div id="moveLeft_div"></div>
+                <div id="moveRight_div"></div>
+            </div>
+            <div id="bottom">
+                <div id="moveDown_div"></div>
+            </div>
+        </div-->
+        <div id="score_board">
+            <h3>Life</h3>
+            <div>
+                <span id="life">1000</span>
+                <div class="progress_bar">
+                
+                </div>
+            </div>
+            <h3>Time</h3>
+            <div class="timer_div">
+                <p>
+                    00:00:<span id="time">00</span>
+                </p>
+            </div>
+            <div id="multibutton">
+                start
+            </div>
+            <div id="reset">
+                reset
+            </div>
+        </div>
+        
+    </div>
+    <div id="light_box">
+        <span class="close">ESC [X]</span>
+        <div>
+            <img src="images/arrow.png"/>
+            <p>Usa las flechas en tu teclado para mover al personaje</p>
+            <img src="images/pc-enter.png"/>
+            <p>Presiona ENTER para comenzar o pausar el juego</p>
+        </div>
+    </div>
+</body>
+</html>
